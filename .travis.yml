@@ -4,6 +4,6 @@ deploy:
   provider: heroku
   api_key:
     secure: LoDSt4ypfRlLiynERH+DZ+yVVm37s+ZFX8Vc+mHjHzoSRkUM7AtJkYN3Pj4BeK8Op2ejfd7ifcucnfGXZ2Li+G4Abd5QN99UF4I4jC98DGmGymY+EZ9qwS+0YJn7a1B/8kI9awP57lfxfI7HkNRqi0730hMD+K66lPjefQvykrhFznrHMTeop7wdDyfIqcVVWQS/lL26Ns0qNkGtv8rhSOnKn2uTlCyLnOZUe2xIYKSWQ1BqP5MX3+qcL9J0/03a3b9RdV7UTjERvuokA/LcBDy6UQbdcrxPHn/Iz1smFv5hQDqAHcYu96gSvbXfMKbyFXuebNV/CBlDIJtQrpOBiI3fUpDcK0kuKeQzRqsbGENyvt0ybdhF+gTrWMK3Pnwaw+Zqj8LuMySIcVkX60y8ZhSLWU94JGWK5kPeQ6hE6YMvwWb8xZz76Kbwxo6wHIK57Kp+vGNpibqCXWykirzgqUu78+Fij+Z1r2FIIFU6n8k5eFSb2NJ3iud35qJYEKz2jv3YN7ehJnwICtgAFsOBSs2wrAOtQzpZQ62rYC1MzDhYAGqQ0Zy/MTv86bn6AGih3cTx4jvs0BUpHPM498F8zQFy/rmfapOJn8+B7/L9RfXyKLpHe/TUvkHasj2wcoIHW5KycYZuqZEAp4w54qyKg1iKsnIUaPogIruG4hccqss=
-  app: blockchain-portfolio-app
+  app: secret-ravine-73443
   on:
     repo: ryanbozarth/blockchain-portfolio-app
