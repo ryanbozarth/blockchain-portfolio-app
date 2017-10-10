@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AddAssets from './AddAssets';
 
+import './Header.css';
+
 class Header extends Component {
   renderContent() {
     switch (this.props.auth) {
@@ -10,16 +12,16 @@ class Header extends Component {
         return;
       case false:
         return (
-          <li>
+          <li className="btn btn-oauth">
             <a href="/auth/google">Login with Google</a>
           </li>
         );
       default:
         return [
-          <li key="1">
+          <li key="1" className="btn btn-assets">
             <AddAssets />
           </li>,
-          <li key="2">
+          <li key="2" className="btn btn-logout">
             <a href="/api/logout">Logout</a>
           </li>
         ];
@@ -28,12 +30,12 @@ class Header extends Component {
 
   render() {
     return (
-      <nav>
-        <div>
-          <Link to={this.props.auth ? '/dashboard' : '/'}>Portfolio Logo</Link>
-          <ul>{this.renderContent()}</ul>
-        </div>
-      </nav>
+      <div className="header">
+        <Link to={this.props.auth ? '/dashboard' : '/'}>
+          <h1 className="white">Blockchain Portfolio</h1>
+        </Link>
+        <ul>{this.renderContent()}</ul>
+      </div>
     );
   }
 }

@@ -4,7 +4,7 @@ import * as actions from '../actions';
 
 class AddAssets extends Component {
   render() {
-    return <button>Add Assets</button>;
+    return <a>Add Assets</a>;
   }
 }
 

@@ -1,0 +1,25 @@
+.summary {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: calc(40px - 1em);
+}
+
+.summary-card {
+  flex: 1 1 17.5%;
+  min-width: 150px;
+  max-width: 200px;
+  height: 75px;
+  padding: 0 1em;
+  border-right: 1px solid #e1e4ea;
+}
+
+.summary-card:last-of-type {
+  border: none;
+}
+
+.primary-heading {
+  font-size: 1.5em;
+  font-weight: 800;
+}

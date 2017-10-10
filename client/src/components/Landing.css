@@ -1,0 +1,28 @@
+.landing-layout {
+  align-items: center;
+}
+
+.landing-image {
+  background-image: url('https://storage.googleapis.com/eco-woodland-6816/hero_1200%402x.jpg');
+  background-color: #2c82be;
+  /*background-color: transparent;*/
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+}
+
+.tagline {
+  font-size: 3em;
+  max-width: 550px;
+  font-weight: 600;
+  letter-spacing: 1.75px;
+}
