@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import AddAssets from './AddAssets';
+import AddButton from './AddButton';
 
 import './Header.css';
 
@@ -19,7 +19,7 @@ class Header extends Component {
       default:
         return [
           <li key="1" className="btn btn-assets">
-            <AddAssets />
+            <AddButton />
           </li>,
           <li key="2" className="btn btn-logout">
             <a href="/api/logout">Logout</a>
@@ -32,7 +32,7 @@ class Header extends Component {
     return (
       <div className="header">
         <Link to={this.props.auth ? '/dashboard' : '/'}>
-          <h1 className="white">Blockchain Portfolio</h1>
+          <h1 className="white-text">Blockchain Portfolio</h1>
         </Link>
         <ul>{this.renderContent()}</ul>
       </div>

@@ -46,3 +46,11 @@ export function roi(data) {
 export function currentValue(data) {
   return dispatch => dispatch({ type: CURRENT_VALUE, payload: data });
 }
+
+// post or patch to update certain fields in a database object
+export const submitForm = (values, history) => async dispatch => {
+  const res = await axios.post('./api/addassets', values);
+
+  history.push('/dashboard');
+  dispatch({ type: FETCH_USER, payload: res.data });
+};

@@ -10,8 +10,7 @@ class AssetPriceList extends Component {
   }
 
   renderPriceList() {
-    console.log(this.props);
-    const { bitcoin, ethereum, litecoin } = this.props.priceList;
+    const { bitcoin, ethereum, litecoin } = this.props.prices;
     const coins = _.compact([bitcoin, ethereum, litecoin]);
     const coinTemplate = _.map(coins, coin => {
       return (
@@ -43,7 +42,7 @@ class AssetPriceList extends Component {
 }
 
 function mapStateToProps(state) {
-  return { priceList: state.prices.priceList };
+  return { prices: state.prices.priceList };
 }
 
 export default connect(mapStateToProps, { fetchPrices })(AssetPriceList);

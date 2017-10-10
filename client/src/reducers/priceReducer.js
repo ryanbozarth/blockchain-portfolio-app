@@ -15,7 +15,7 @@ const INITIAL_STATE = {
 const test = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_PRICES:
-      return { ...state, pricesList: _.mapKeys(action.payload.data, 'id') };
+      return { ...state, priceList: _.mapKeys(action.payload.data, 'id') };
     case INITIAL_INVESTMENT:
       return {
         ...state,

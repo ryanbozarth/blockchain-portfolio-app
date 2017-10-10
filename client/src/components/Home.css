@@ -7,10 +7,6 @@
   grid-template-areas: 'summary' 'content';
 }
 
-/*.header {
-  grid-area: header;
-}*/
-
 .summary {
   grid-area: summary;
 }

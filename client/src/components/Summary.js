@@ -61,7 +61,7 @@ class Summary extends Component {
         </div>
         <div className="summary-card border-left">
           <h5>Day's Gain</h5>
-          <p className="primary-heading green">$XXX.XX</p>
+          <p className="primary-heading green-text">$XXX.XX</p>
         </div>
         <div className="summary-card border-left">
           <h5>Amount Invested</h5>

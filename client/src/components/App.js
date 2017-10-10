@@ -10,7 +10,7 @@ import './App.css';
 import Header from './Header';
 import Landing from './Landing';
 import Home from './Home';
-const Dashboard = () => <h2>Dashboard</h2>;
+import AssetNew from './assets/AssetNew';
 
 class App extends Component {
   componentDidMount() {
@@ -25,6 +25,7 @@ class App extends Component {
             <Header className="grid" />
             <Route exact path="/" component={Landing} />
             <Route path="/dashboard" component={Home} />
+            <Route path="/add" component={AssetNew} />
           </div>
         </BrowserRouter>
       </div>
