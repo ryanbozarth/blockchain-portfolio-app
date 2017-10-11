@@ -45,6 +45,10 @@ h5 {
   color: #70707f;
 }
 
+.italics {
+  font-style: italic;
+}
+
 .green-text {
   color: #34a946;
 }

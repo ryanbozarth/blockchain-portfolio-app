@@ -1,5 +1,3 @@
-const re = /^[1-9][\.\d]*(,\d+)?$/;
-
 export function enforceNumber(opts) {
   for (var key in opts) {
     if (opts.hasOwnProperty(key)) {
@@ -16,15 +14,4 @@ export function getColor(value) {
 
 export function round(value, decimals) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
-}
-
-export function validateNumbers(values) {
-  // const invalidNumbers = values
-  // .map()
-  // .filter(email => re.test(value) === false);
-  //
-  // if (invalidNumbers.length) {
-  //   return `These fields are invalid: ${invalidNumbers}`;
-  // }
-  return;
 }

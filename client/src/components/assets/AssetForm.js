@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import FormField from './FormField';
-import validateNumbers from '../../utils';
 import formFieldNames from './formFieldNames';
 
 class AssetForm extends Component {
@@ -42,9 +41,16 @@ class AssetForm extends Component {
 }
 
 function validate(values) {
+  const re = /^(:?^|\s)(?=.)((?:0|(?:[1-9](?:\d*|\d{0,2}(?:,\d{3})*)))?(?:\.\d*[1-9])?)(?!\S)$/;
   const errors = {};
 
-  // errors.values = validateNumbers(values || '');
+  _.each(formFieldNames, ({ name, noValueError }) => {
+    if (!values[name]) {
+      errors[name] = noValueError;
+    } else if (!re.test(values[name])) {
+      errors[name] = 'Please enter a number';
+    }
+  });
 
   return errors;
 }

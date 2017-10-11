@@ -10,17 +10,26 @@ const FormReview = ({ onCancel, formValues, submitForm, history }) => {
     return (
       <div key={name}>
         <label>{label}</label>
-        <div>{formValues[name]}</div>
+        <div className="italics">{formValues[name]}</div>
       </div>
     );
   });
 
   return (
-    <div className="form-group">
-      <h5>Please review your entries</h5>
+    <div className="form-area">
+      <h2>Please review your entries</h2>
       {reviewFields}
-      <button onClick={onCancel}>Back</button>
-      <button onClick={() => submitForm(formValues, history)}>Submit</button>
+      <div className="btn-group">
+        <button className="form-btn form-btn-cancel" onClick={onCancel}>
+          Back
+        </button>
+        <button
+          className="form-btn form-btn-review"
+          onClick={() => submitForm(formValues, history)}
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 };
