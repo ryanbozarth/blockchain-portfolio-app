@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   FETCH_USER,
   FETCH_PRICES,
+  SUBMIT_FORM,
   CURRENT_VALUE,
   INITIAL_INVESTMENT,
   AMOUNT_EARNED,
@@ -15,7 +16,7 @@ export const fetchUser = () => async dispatch => {
   dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-export function fetchPrices() {
+export const fetchPrices = () => {
   const request = axios.get(`${ROOT_URL}`);
 
   return dispatch => {
@@ -23,7 +24,7 @@ export function fetchPrices() {
       dispatch({ type: FETCH_PRICES, payload: data });
     });
   };
-}
+};
 
 // export const fetchPrices = () => async dispatch => {
 //   const res = await axios.get(`${ROOT_URL}`);
@@ -31,26 +32,27 @@ export function fetchPrices() {
 //   dispatch({ type: FETCH_PRICES, payload: res.data });
 // };
 
-export function initialInvestment(data) {
+export const initialInvestment = data => {
   return dispatch => dispatch({ type: INITIAL_INVESTMENT, payload: data });
-}
+};
 
-export function amountEarned(data) {
+export const amountEarned = data => {
   return dispatch => dispatch({ type: AMOUNT_EARNED, payload: data });
-}
+};
 
-export function roi(data) {
+export const roi = data => {
   return dispatch => dispatch({ type: ROI, payload: data });
-}
+};
 
-export function currentValue(data) {
+export const currentValue = data => {
   return dispatch => dispatch({ type: CURRENT_VALUE, payload: data });
-}
+};
 
 // post or patch to update certain fields in a database object
-export const submitForm = (values, history) => async dispatch => {
-  const res = await axios.post('./api/addassets', values);
+export const submitForm = (values, history, auth_id) => async dispatch => {
+  values.auth_id = auth_id;
+  const res = await axios.post('/api/addassets', values);
 
   history.push('/dashboard');
-  dispatch({ type: FETCH_USER, payload: res.data });
+  dispatch({ type: SUBMIT_FORM, payload: res.data });
 };

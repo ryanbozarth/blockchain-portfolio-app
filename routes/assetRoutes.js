@@ -1,17 +1,24 @@
 const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
-
-// require googleId
-
-// const User = mongoose.model('users');
+const { User } = require('../models/User');
 
 module.exports = app => {
-  // app.post('/api/addsassets', requireLogin, async (req, res) => {
-  //   const { bitcoin, ethereum, litecoin } = req.body;
-  //
-  //   .findByIdAndUpdate(googleId, {$set: {bitcoin: new value, ethereum: new value, litecoin: new value} })
-  //   .then(res.send(user) => res.status(204).end())
-  //   .catch(err => res.status(500).json({message: 'Internal server error'}));
-  //
-  // });
+  app.post('/api/addassets', requireLogin, (req, res) => {
+    const { bitcoin, ethereum, litecoin, auth_id } = req.body;
+    console.log(req.body);
+    User.findByIdAndUpdate(
+      auth_id,
+      {
+        $inc: {
+          bitcoin: Number(bitcoin),
+          ethereum: Number(ethereum),
+          litecoin: Number(litecoin)
+        }
+      },
+      { new: true }
+    ).then(data => {
+      console.log(data);
+      res.json(data);
+    });
+  });
 };

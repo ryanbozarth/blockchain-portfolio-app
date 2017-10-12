@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 import AssetForm from './AssetForm';
 import AssetFormReview from './AssetFormReview';
 
@@ -13,6 +14,7 @@ class AssetNew extends Component {
       return (
         <AssetFormReview
           onCancel={() => this.setState({ showFormReview: false })}
+          auth_id={this.props.auth_id}
         />
       );
     }
@@ -26,6 +28,18 @@ class AssetNew extends Component {
   }
 }
 
-export default reduxForm({
-  form: 'assetForm'
-})(AssetNew);
+// export default reduxForm({
+//   form: 'assetForm'
+// })(AssetNew);
+
+function mapStateToProps(state) {
+  return {
+    auth_id: state.auth._id
+  };
+}
+
+export default connect(mapStateToProps)(
+  reduxForm({
+    form: 'assetForm'
+  })(AssetNew)
+);

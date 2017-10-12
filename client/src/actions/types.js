@@ -1,5 +1,6 @@
 export const FETCH_USER = 'fetch_user';
 export const FETCH_PRICES = 'fetch_prices';
+export const SUBMIT_FORM = 'submit_form';
 export const CURRENT_VALUE = 'current_user';
 export const INITIAL_INVESTMENT = 'initial_investment';
 export const AMOUNT_EARNED = 'amount_earned';

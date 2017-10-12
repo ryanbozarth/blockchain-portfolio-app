@@ -5,7 +5,7 @@ import formFieldNames from './formFieldNames';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 
-const FormReview = ({ onCancel, formValues, submitForm, history }) => {
+const FormReview = ({ onCancel, formValues, submitForm, history, auth_id }) => {
   const reviewFields = _.map(formFieldNames, ({ name, label }) => {
     return (
       <div key={name}>
@@ -25,7 +25,7 @@ const FormReview = ({ onCancel, formValues, submitForm, history }) => {
         </button>
         <button
           className="form-btn form-btn-review"
-          onClick={() => submitForm(formValues, history)}
+          onClick={() => submitForm(formValues, history, auth_id)}
         >
           Submit
         </button>
@@ -35,7 +35,9 @@ const FormReview = ({ onCancel, formValues, submitForm, history }) => {
 };
 
 function mapStateToProps(state) {
-  return { formValues: state.form.assetForm.values };
+  return {
+    formValues: state.form.assetForm.values
+  };
 }
 
 export default connect(mapStateToProps, actions)(withRouter(FormReview));
