@@ -23,8 +23,8 @@ class AssetForm extends Component {
   render() {
     return (
       <div className="form-area">
-        <h2 className="form-header">How much of each asset do you own?</h2>
         <form onSubmit={this.props.handleSubmit(this.props.onFormSubmit)}>
+          <h2 className="form-header">How much of each asset do you own?</h2>
           {this.renderFields()}
           <div className="btn-group">
             <button className="form-btn form-btn-cancel">

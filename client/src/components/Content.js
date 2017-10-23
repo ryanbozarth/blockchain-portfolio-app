@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import ProfileValue from './ProfileValue';
-import PortfolioDiversity from './PortfolioDiversity';
+import PortfolioAssets from './PortfolioAssets';
 import AssetPriceList from './AssetPriceList';
 
 import './Content.css';
@@ -8,14 +7,9 @@ import './Content.css';
 class Content extends Component {
   render() {
     return (
-      <div>
-        <div className="content content-summary">
-          <ProfileValue />
-        </div>
-        <div className="content content-portfolio">
-          <PortfolioDiversity />
-          <AssetPriceList />
-        </div>
+      <div className="content content-portfolio">
+        <PortfolioAssets />
+        <AssetPriceList />
       </div>
     );
   }
