@@ -1,52 +1,58 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import profile from '../server';
 import * as actions from '../actions';
-import { enforceNumber, getColor } from '../utils/index';
+import { getColor } from '../utils/index';
 
 import './Summary.css';
 
 // Earnings
-function calculateEarned(current, initial) {
-  let result = current - initial;
-  return result;
-}
-
-let amount = calculateEarned(profile.currentValue, profile.amountInvested);
+// function calculateEarned(current, initial) {
+//   let result = current - initial;
+//   return result;
+// }
 
 // ROI
-function returnOnInvestment(currentValue, amountInvested) {
-  let result = {};
-
-  enforceNumber(currentValue, amountInvested);
-
-  if (!currentValue || !amountInvested) {
-    throw new Error(
-      'Earnings and initial investment are required and must be numbers.'
-    );
-  }
-
-  result.raw = (currentValue - amountInvested) / amountInvested;
-  result.rounded = Math.round(result.raw * 10000) / 10000;
-  result.percent = result.rounded * 100;
-  return result.percent;
-}
-
-let roiResult = returnOnInvestment(
-  profile.currentValue,
-  profile.amountInvested
-);
+// function returnOnInvestment(currentValue, amountInvested) {
+//   let result = {};
+//
+//   enforceNumber(currentValue, amountInvested);
+//
+//   if (!currentValue || !amountInvested) {
+//     throw new Error(
+//       'Earnings and initial investment are required and must be numbers.'
+//     );
+//   }
+//
+//   result.raw = (currentValue - amountInvested) / amountInvested;
+//   result.rounded = Math.round(result.raw * 10000) / 10000;
+//   result.percent = result.rounded * 100;
+//   return result.percent;
+// }
 
 class Summary extends Component {
+  componentDidMount() {
+    this.props.currentValue();
+  }
+  // currentValue() {
+  //   if (_.isEmpty(this.props.auth)) {
+  //     return '0';
+  //   }
+  //   const bitcoin =
+  //     this.props.auth.bitcoin * this.props.prices.priceList.bitcoin.price_usd;
+  //   const ethereum =
+  //     this.props.auth.ethereum * this.props.prices.priceList.ethereum.price_usd;
+  //   const litecoin =
+  //     this.props.auth.litecoin * this.props.prices.priceList.litecoin.price_usd;
+  //   return bitcoin + ethereum + litecoin;
+  // }
+
   render() {
     return (
       <div className="summary">
         <div className="summary-card">
           <h5>Current Value</h5>
-          <p className="primary-heading">
-            ${_.get(this.props, 'auth.bitcoin', 0).toLocaleString()}
-          </p>
+          <p className="primary-heading">$0</p>
         </div>
         <div className="summary-card border-left">
           <h5>Day's Gain</h5>
@@ -75,8 +81,8 @@ class Summary extends Component {
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
+function mapStateToProps({ auth, prices }) {
+  return { auth, prices };
 }
 
 export default connect(mapStateToProps, actions)(Summary);
