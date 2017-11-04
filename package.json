@@ -1,7 +1,7 @@
 {
   "name": "block-portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://secret-ravine-73443.herokuapp.com/",
   "main": "index.js",
   "engines": {
     "node": "8.1.1",
@@ -25,5 +25,14 @@
     "nodemon": "^1.12.1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanbozarth/blockchain-portfolio-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanbozarth/blockchain-portfolio-app/issues"
+  },
+  "homepage": "https://github.com/ryanbozarth/blockchain-portfolio-app#readme"
 }
