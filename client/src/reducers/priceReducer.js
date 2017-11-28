@@ -8,8 +8,7 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-  priceList: {},
-  user: {}
+  priceList: {}
 };
 
 const test = (state = INITIAL_STATE, action) => {
