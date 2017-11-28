@@ -32,20 +32,20 @@ import './Summary.css';
 
 class Summary extends Component {
   componentDidMount() {
-    this.props.currentValue();
+    // this.props.currentValue();
   }
-  // currentValue() {
-  //   if (_.isEmpty(this.props.auth)) {
-  //     return '0';
-  //   }
-  //   const bitcoin =
-  //     this.props.auth.bitcoin * this.props.prices.priceList.bitcoin.price_usd;
-  //   const ethereum =
-  //     this.props.auth.ethereum * this.props.prices.priceList.ethereum.price_usd;
-  //   const litecoin =
-  //     this.props.auth.litecoin * this.props.prices.priceList.litecoin.price_usd;
-  //   return bitcoin + ethereum + litecoin;
-  // }
+  currentValue() {
+    if (_.isEmpty(this.props.auth)) {
+      return '0';
+    }
+    const bitcoin =
+      this.props.auth.bitcoin * this.props.prices.priceList.bitcoin.price_usd;
+    const ethereum =
+      this.props.auth.ethereum * this.props.prices.priceList.ethereum.price_usd;
+    const litecoin =
+      this.props.auth.litecoin * this.props.prices.priceList.litecoin.price_usd;
+    return bitcoin + ethereum + litecoin;
+  }
 
   render() {
     return (
