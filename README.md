@@ -4,6 +4,10 @@ https://secret-ravine-73443.herokuapp.com/
 
 A full stack web app with authenticated login that allows you to track your cyptocurrency investments. The central dashboard shows you key metrics, such as your current portfolio value, ROI, and more. Currently supports Bitcoin, Ethereum, and Litecoin.
 
+![Dashboard](assets/dashboard.png)
+
+![Add Investment](assets/add_investment.png)
+
 ## Installing
 
 If you would like to run it yourself:
