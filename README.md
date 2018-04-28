@@ -2,20 +2,18 @@
 
 https://secret-ravine-73443.herokuapp.com/
 
-## Introduction
-A full stack web app with authenticated login that allows you to track your cyptocurrency investments. A central dashboard shows you key metrics, such as your current portfolio value, ROI, and more. Currently supports Bitcoin, Ethereum, and Litecoin.
+A full stack web app with authenticated login that allows you to track your cyptocurrency investments. The central dashboard shows you key metrics, such as your current portfolio value, ROI, and more. Currently supports Bitcoin, Ethereum, and Litecoin.
 
+## Installing
 
-## Documentation
-
-If you would like to try running it yourself:
+If you would like to run it yourself:
 
 ```
 $ npm install
 $ npm run dev
 ```
 
-## Packages and Other Technology Used
+## Built With
 
 - React 
 - Redux / Redux Router / Redux Form
